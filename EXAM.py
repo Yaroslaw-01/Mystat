@@ -31,7 +31,7 @@ class ShoppingCart:
     def remove_product(self, product):
         if product.name in self.items:
             quantity_in_cart = self.items[product.name]['quantity']
-            product.quantity += quantity_in_cart  # Повертаємо товар на склад
+            product.quantity += quantity_in_cart
             del self.items[product.name]
             print(f"{product.name} видалено з кошика.")
         else:
@@ -39,7 +39,7 @@ class ShoppingCart:
 
     def clear_cart(self):
         for item in self.items.values():
-            item['product'].quantity += item['quantity']  # Повертаємо всі товари на склад
+            item['product'].quantity += item['quantity']
         self.items.clear()
         print("Кошик очищено.")
 
@@ -111,17 +111,17 @@ mango = Product("Манго", 1.8, 25)
 strawberry = Product("Полуниця", 2.0, 50)
 blueberry = Product("Чорниця", 2.5, 40)
 
-# Ініціалізація кошика
+
 cart = ShoppingCart()
 
-# Запуск інтерфейсу магазину
+
 products = [apple, banana, orange, grape, watermelon, pineapple, peach, kiwi, mango, strawberry, blueberry]
 shop_interface(cart, products)
 
-# Можливість застосувати знижку після вибору товарів
+
 cart.apply_discount(10, 10)
 
-# Очистка кошика за бажанням
+
 if input("Бажаєте очистити кошик? (так/ні): ").lower() == "так":
     cart.clear_cart()
     print(cart)
