@@ -73,7 +73,7 @@ class ShoppingCart:
 
 
 def shop_interface(cart, products):
-    product_dict = {product.name.lower(): product for product in products}  # Словник для пошуку товару за назвою
+    product_dict = {product.name.lower(): product for product in products}
 
     while True:
         print("\nДоступні товари:")
